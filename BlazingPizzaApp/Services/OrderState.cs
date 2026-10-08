@@ -5,8 +5,14 @@ using System.Text;
 
 namespace BlazingPizzaApp.Services
 {
+    
     public class OrderState
     {
+        public void RemoveConfiguredPizza(Pizza pizza)
+        {
+            Order.Pizzas.Remove(pizza);
+        }
+
         public bool ShowingConfigureDialog { get; set; } = false;
         public Pizza ConfiguringPizza { get; private set; }
         public Order Order { get; private set; } = new Order();
